@@ -128,3 +128,71 @@ for number in gen:
 ## Summary
 
 Generators are an efficient way to handle large data sets, process streams of data, and manage memory usage. They produce items one at a time, on-the-fly, without the need to store all elements in memory, making them ideal for scenarios where memory efficiency is critical.
+
+
+## Generator Expression
+
+Generator expression is kind of similar to generator function. 
+
+[-] You can  convert the type to something like a list, loop through the content like a list `next()`
+
+[-] They can also be exhaused after use. 
+
+[-] 
+
+
+## Generator Expression in Python
+
+A generator expression in Python is a compact way to create a generator on the fly without needing to define a separate generator function. It is similar to a list comprehension, but instead of creating a list, it returns a generator object, which can be iterated over to produce items one at a time. This can be more memory efficient than using a list comprehension when dealing with large data sets, as it generates items lazily, meaning it produces items only as they are needed.
+
+The syntax for a generator expression is similar to that of a list comprehension, but with parentheses instead of square brackets:
+
+```py
+(generator_expression for item in iterable if condition)
+
+```
+
+**Example**
+
+Here is an example of a generator expression that generates the squares of numbers from 0 to 9:
+
+```py
+squares = (x**2 for x in range(10))
+
+# To access the items, you can use a loop or convert it to a list
+for square in squares:
+    print(square)
+```
+
+## Advantages
+
+Memory Efficiency: Since generator expressions produce items one at a time, they are more memory efficient compared to list comprehensions, especially for large datasets.
+Performance: They can be faster than list comprehensions for large datasets because they avoid the overhead of creating and storing the entire list in memory.
+
+## Example with Condition
+
+You can also include a condition in the generator expression:
+
+```py
+even_squares = (x**2 for x in range(10) if x % 2 == 0)
+
+for square in even_squares:
+    print(square)
+
+```
+
+## Use Case
+
+Generator expressions are useful in scenarios where you want to process data on the fly without loading everything into memory. This is particularly useful for large data streams or when dealing with I/O operations like reading from a file or a network socket.
+
+In summary, generator expressions provide a concise and memory-efficient way to create iterators in Python.
+
+
+## Difference between list comprehension and Generator Experession
+
+- Comprehension can be faster but Expressions save memory. 
+
+
+
+
+
